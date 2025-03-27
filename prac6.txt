@@ -1,0 +1,22 @@
+Open R studio -> Go on R console and type code. 
+>X<-read.csv("C:/Users/Admin/Documents/SampleStudentData.csv") 
+> X
+.>x$humidity=ifelse(test=x$humidity=="high",yes=1,no=0)
+>x
+>x$play=ifelse(test=x$play=="yes",yes=1,no=0)
+>x
+>x$windy=ifelse(test=x$windy=="FALSE",yes=0,no=1)
+>x
+>s=sample(nrow(x),.7*nrow(x)) 
+>x_tr=x[s,] 
+>x_test=x[-s,] 
+>nrow(x) 
+>nrow(x_tr) 
+>nrow(x_test)
+>lmod=glm(play~windy,data=x_tr,family=binomial,control=list(maxit=100)) 
+>lmod
+>summary(lmod)
+>lmod=glm(play~temperature,data=x_tr,family=binomial,control=list(maxit=100)) 
+>summary(lmod)
+>p=predict(lmod,x_test,type="response") 
+>p
