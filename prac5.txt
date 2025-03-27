@@ -1,4 +1,4 @@
-
+#Part 1
 x <- c(151, 174, 138, 186, 128, 136, 179, 163, 152, 131) 
 y <- c(63, 81, 56, 91, 47, 57, 76, 72, 62, 48) 
 relation <- lm(y~x) 
@@ -9,3 +9,19 @@ png(file = "linearregression.png")
 plot(y,x,col = "blue",main = "Height & Weight Regression", abline(lm(x~y)),cex = 1.3,pch = 16,xlab = "Weight in Kg",ylab = "Height in cm") 
 
 dev.off()
+
+
+
+#Part2
+
+#Open Excel-> create 4 columns with names Exam1, Exam2, Exam3, Exam4, Final Score, Grade.
+#Open R Studio -> Go on R console and type code
+>Data = read.csv(“D://TYCS21/score.csv”) 
+>Data
+>plot(x=data$Exam1,y=data$Final_score)
+>s=sample(nrow(data),.7*nrow(data))
+>score_tr=data[s,]
+>score_test=[-s,] 
+>Score_tr
+>linmod =lm(Final_score-Exam3,data=score_tr) 
+>print(linmod)
